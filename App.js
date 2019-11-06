@@ -7,7 +7,9 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
+import Search from './Components/Search'
+import DiceApp from './Components/DiceApp'
 
 import firebase from '@react-native-firebase/app';
 
@@ -17,11 +19,6 @@ import firebase from '@react-native-firebase/app';
 //    2) rebuild your app via `yarn run run:android` or `yarn run run:ios`
 //    3) import the package here in your JavaScript code: `import '@react-native-firebase/auth';`
 //    4) The Firebase Auth service is now available to use here: `firebase.auth().currentUser`
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\nCmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\nShake or press menu button for dev menu',
-});
 
 const firebaseCredentials = Platform.select({
   ios: 'https://invertase.link/firebase-ios',
@@ -34,11 +31,9 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Ayya app Alexis</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <DiceApp/>
         {!firebase.apps.length && (
-          <Text style={styles.instructions}>
+          <Text>
             {`\nYou currently have no Firebase apps registered, this most likely means you've not downloaded your project credentials. Visit the link below to learn more. \n\n ${firebaseCredentials}`}
           </Text>
         )}
@@ -53,15 +48,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
 });
