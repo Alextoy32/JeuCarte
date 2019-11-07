@@ -3,6 +3,7 @@ import {Text, StyleSheet} from 'react-native'
 
 import { Container, TouchContainer } from './styles/styles'
 import { SideThree, SideOne, SideTwo, SideFour, SideFive, SideSix } from './dice/side'
+import {DoubleN} from './biskit/strings'
 
 class DiceApp extends React.Component {
     constructor(props) {
@@ -22,7 +23,7 @@ class DiceApp extends React.Component {
         const Side2 = [SideOne, SideTwo, SideThree, SideFour, SideFive, SideSix][this.state.side2]
         return (
             <Container>
-                <Text style={styles.message}>Jeu des dés!!!</Text>
+                <DoubleN name='Jean' n='3'></DoubleN>
                 <TouchContainer onPress={this._rollDice}>
                     <Side1 />
                     <Side2 />
