@@ -17,10 +17,10 @@ export const Som7 = props =>
 <Text>le dernier boit 1 gorgées, puis {props.name} rejoue</Text>
 
 export const Som10 = props =>
-<Text>{props.name} boit 1 gorgées puis passe les dés</Text>
+<Text>{props.name} boit 1 gorgées puis passe les dés {props.nameS}</Text>
 
 export const Som11 = props =>
-<Text>{props.nameS} boit 1 gorgées puis {props.name}</Text>
+<Text>{props.nameS} boit 1 gorgées puis {props.name} rejoue</Text>
 
 export const NewPigeon = props =>
 <Text>{props.name} devient pigeon, tu boit 1 gorgées et passe les dés</Text>
