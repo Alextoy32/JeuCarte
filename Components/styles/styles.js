@@ -4,6 +4,8 @@ export const Container = styled.View`
   background-color: #00ced1;
   width: 100%;
   height: 100%;
+  flex: 1;
+  align-items: center;
 `
 
 export const TouchContainer = styled.TouchableOpacity.attrs({
@@ -12,7 +14,7 @@ export const TouchContainer = styled.TouchableOpacity.attrs({
   width: 100%;
   height: 100%;
   flex: 1;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 `

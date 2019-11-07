@@ -1,5 +1,5 @@
 import React from 'react'
-import {Text} from 'react-native'
+import {Text, StyleSheet} from 'react-native'
 
 import { Container, TouchContainer } from './styles/styles'
 import { SideThree, SideOne, SideTwo, SideFour, SideFive, SideSix } from './dice/side'
@@ -22,15 +22,20 @@ class DiceApp extends React.Component {
         const Side2 = [SideOne, SideTwo, SideThree, SideFour, SideFive, SideSix][this.state.side2]
         return (
             <Container>
+                <Text style={styles.message}>Jeu des dés!!!</Text>
                 <TouchContainer onPress={this._rollDice}>
-                    <Text>Jeu des dés!!!</Text>
                     <Side1 />
                     <Side2 />
-                    <Text>la somme est {this.state.side1 + this.state.side2 +2}</Text>
                 </TouchContainer>
             </Container>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    message: {
+      fontSize: 50
+    },
+  });
 
 export default DiceApp
