@@ -1,6 +1,7 @@
 import React from 'react'
 import {Text} from 'react-native'
 
+
 export const DoubleN = props =>
 <Text>{props.name} distribue {props.n} gorgées puis rejoue</Text>
 
