@@ -15,13 +15,16 @@ export const Som5 = props =>
 <Text>{props.name} choisit de faire un mini jeu ou invente une règle</Text>
 
 export const Som7 = props =>
-<Text>le dernier boit 1 gorgées, puis {props.name} rejoue</Text>
+<Text>Bizkit! le dernier boit 1 gorgées, puis {props.name} rejoue</Text>
+
+export const som9 = props =>
+<Text>Le joueur précédent boit 1 gorgée puis {props.name} rejoue</Text>
 
 export const Som10 = props =>
 <Text>{props.name} boit 1 gorgées puis passe les dés {props.nameS}</Text>
 
 export const Som11 = props =>
-<Text>{props.nameS} boit 1 gorgées puis {props.name} rejoue</Text>
+<Text>le suivant boit 1 gorgées puis {props.name} rejoue</Text>
 
 export const NewPigeon = props =>
 <Text>{props.name} devient pigeon, tu boit 1 gorgées et passe les dés</Text>

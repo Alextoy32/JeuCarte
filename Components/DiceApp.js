@@ -3,7 +3,7 @@ import {Text, StyleSheet} from 'react-native'
 
 import { Container, TouchContainer } from './styles/styles'
 import { SideThree, SideOne, SideTwo, SideFour, SideFive, SideSix } from './dice/side'
-import {DoubleN, Double5, Double1, Som10, Som11, Som7,Som5 , NewPigeon, PigeonBois, PigeonDouble6} from './biskit/strings'
+import {DoubleN, Double5, Double1, Som10, Som11, Som7,Som5 , NewPigeon, PigeonBois, PigeonDouble6, Som9} from './biskit/strings'
 
 class DiceApp extends React.Component {
     constructor(props) {
@@ -12,40 +12,40 @@ class DiceApp extends React.Component {
         this._rollDice = this._rollDice.bind(this)
     }
 
-    _display() {
-        if (this.state.side1 == this.state.side2 && this.state.side1+1 == 1){
-            this.setState({r:2,n:1})
-        } else if(this.state.side1 == this.state.side2 && this.state.side1+1 == 5){
-            this.setState({r:1,n:5})
-        }else if(this.state.side1 == 1 && this.state.side2 == 2 || this.state.side1 == 2 && this.state.side2 == 1){
-            this.setState({r:3,n:2})
-        } else if(this.state.side1 == this.state.side2){
-            this.setState({r:0,n:this.state.side1+1})
-        } else if(this.state.side1 + this.state.side2 +2 == 10){
-            this.setState({r:3,n:2})
-        }else if(this.state.side1 + this.state.side2+2 == 11){
-            this.setState({r:4,n:2})
-        }else if(this.state.side1 + this.state.side2+2 == 7){
-            this.setState({r:5,n:2})
-        }else if(this.state.side1 + this.state.side2+2 == 5){
-            this.setState({r:6,n:2})
+    _display(side1,side2) {
+        if (side1 ==side2 && side1+1 == 1){
+            this.setState({r:2,n:1,side1:side1,side2:side2})
+        } else if(side1 == side2 && side1+1 == 5){
+            this.setState({r:1,n:5,side1:side1,side2:side2})
+        }else if(side1 == 1 && side2 == 2 || side1 == 2 && side2 == 1){
+            this.setState({r:3,n:2,side1:side1,side2:side2})
+        } else if(side1 == side2){
+            this.setState({r:0,n:side1+1,side1:side1,side2:side2})
+        } else if(side1 + side2 +2 == 10){
+            this.setState({r:3,n:2,side1:side1,side2:side2})
+        }else if(side1 + side2+2 == 11){
+            this.setState({r:4,n:2,side1:side1,side2:side2})
+        }else if(side1 +side2+2 == 7){
+            this.setState({r:5,n:2,side1:side1,side2:side2})
+        }else if(side1 + side2+2 == 5){
+            this.setState({r:6,n:2,side1:side1,side2:side2})
+        }else if (side1 + side2+2 == 9){
+            this.setState({r:10,n:2,side1,side2})
         }else{
-            this.setState({r:0,n:0})
+            this.setState({r:0,n:0,side1:side1,side2:side2})
         }
     }
 
     _rollDice() {
         const side1 = Math.floor(Math.random() * 6)
         const side2 = Math.floor(Math.random() * 6)
-        this._display()
-        this.setState({ side1,side2})
-        //this.setState({side1:0,side1:0,r:0,n:0})
+        this._display(side1, side2)
     }
 
     render() {
         const Side1 = [SideOne, SideTwo, SideThree, SideFour, SideFive, SideSix][this.state.side1]
         const Side2 = [SideOne, SideTwo, SideThree, SideFour, SideFive, SideSix][this.state.side2]
-        const Phrase = [DoubleN, Double5, Double1, Som10, Som11, Som7,Som5 , NewPigeon, PigeonBois, PigeonDouble6][this.state.r]
+        const Phrase = [DoubleN, Double5, Double1, Som10, Som11, Som7,Som5 , NewPigeon, PigeonBois, PigeonDouble6, Som9][this.state.r]
         return (
             <Container>
                 <Phrase name='Jean' n={this.state.n}></Phrase>
